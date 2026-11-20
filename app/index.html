@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: checklist, roadmap, missables and a guide to each, in our own words.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230e7c66'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Georgia' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="sunset" aria-hidden="true"></div>
+  <div class="masthead-inner">
+    <div class="masthead-copy">
+      <h1>Leonida Platinum</h1>
+      <p class="tagline">The GTA 6 trophy guide &amp; tracker — every one of the 55 PlayStation 5 trophies, offline.</p>
+      <p class="official">Official list, frozen 2026-11-18: 55 trophies — 1 platinum, 2 gold, 6 silver, 46 bronze. PlayStation hides 28 of them until they are earned.</p>
+    </div>
+    <div class="progress-card" id="progressCard">
+      <div class="big-count"><span id="earnedCount">0</span><span class="of"> / 55</span></div>
+      <div class="bar" role="progressbar" aria-label="Trophies earned"><div id="progressBar"></div></div>
+      <p id="progressText">0 earned — the platinum is 55 away.</p>
+      <p class="grade-breakdown" id="gradeBreakdown"></p>
+      <p class="next-up" id="nextUp"></p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="Views">
+    <a href="#/checklist" data-view="checklist">Checklist</a>
+    <a href="#/roadmap" data-view="roadmap">Roadmap</a>
+    <a href="#/missables" data-view="missables">Missables</a>
+    <a href="#/about" data-view="about">About &amp; sources</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="view-checklist" class="view" aria-label="Checklist">
+    <div class="controls">
+      <div class="kind-row" id="kindRow" role="group" aria-label="Filter by kind"></div>
+      <div class="control-row">
+        <label>Grade
+          <select id="gradeFilter">
+            <option value="all">All grades</option>
+            <option value="platinum">Platinum</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+        </label>
+        <label class="search">Search
+          <input id="search" type="search" placeholder="Name or description…" autocomplete="off">
+        </label>
+        <label class="check"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+        <label class="check"><input id="hideEarned" type="checkbox"> Hide earned</label>
+        <button id="exportBtn" type="button">Export progress</button>
+        <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      </div>
+    </div>
+    <div class="board">
+      <div class="list" id="list" aria-live="polite"></div>
+      <aside class="detail" id="detail" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum" hidden>
+    <p class="view-intro">The road to the platinum, in order. Each stage lists its trophies and how far along you are — story first, then side characters, activities, collectibles, combat, and the cleanup.</p>
+    <div id="roadmap" class="roadmap"></div>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies" hidden>
+    <p class="view-intro">Trophies that may only come once. Each flag below is built from the trophy's official description alone — the game is a day old and nothing here has been checked in play yet, so treat “possibly missable” as “do it when the chance comes”, not as a confirmed missable.</p>
+    <div id="missables" class="missables"></div>
+  </section>
+
+  <section id="view-about" class="view" aria-label="About and sources" hidden>
+    <div class="about">
+      <h2>How this guide is built</h2>
+      <p>Every trophy's name, description and grade is the official PlayStation 5 list, frozen 2026-11-18, as Exophase and PSNProfiles published it — the two agreed on every name, description and grade. Counts such as “42 Shooting Range challenges” are PlayStation's own progress targets, via PSNProfiles. The guides are written for this entry, in our own words, from the official descriptions alone. Nothing here has been checked in the game yet, and each guide says so where a place or a step is not pinned down.</p>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/" target="_blank" rel="noopener">Exophase — the official trophy list</a>: every name, description and grade.</li>
+        <li><a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi" target="_blank" rel="noopener">PSNProfiles — Grand Theft Auto VI</a>: PlayStation's progress targets where a trophy has one.</li>
+        <li>Our own advice, from the official description, not yet checked in the game: every guide.</li>
+      </ul>
+      <h2>Your progress</h2>
+      <p>Progress is saved in this browser only (localStorage) — nothing leaves your machine. Export it to a file to keep a copy or move it to another browser, and import it back here.</p>
+      <p>
+        <button id="exportBtn2" type="button">Export progress</button>
+        <label class="import-btn">Import progress <input id="importFile2" type="file" accept="application/json,.json"></label>
+        <button id="resetBtn" type="button">Reset progress</button>
+      </p>
+      <h2>Offline</h2>
+      <p>This guide is plain static files. It loads nothing over the network and needs no account: open <code>app/index.html</code> in a desktop browser and it works with the network off.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Platinum — an unofficial, open-source GTA 6 trophy guide &amp; tracker. Not affiliated with Rockstar Games or PlayStation. No Rockstar logo or official artwork is used here.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
